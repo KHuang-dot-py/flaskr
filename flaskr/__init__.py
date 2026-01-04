@@ -28,4 +28,9 @@ def create_app(test_config = None):
     def hello():
         return 'Hello, World!'
 
+    # importing our database initialization function from db module
+    from . import db
+    db.init_app(app)
+
     return app
+
