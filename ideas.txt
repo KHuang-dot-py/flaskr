@@ -1,0 +1,5 @@
+Extending Flaskr:
+
+Implement Facebook or Google Authentication
+
+Sticky-notes, local network access. Private posts

@@ -8,6 +8,8 @@ from flask import current_app, g
 # it points to and supplies the app handling the current request at runtime
 
 def get_db():
+    # g is a context-local proxy that can stores values for the duration of the current request
+    # cleared automatically afterwards by flask
     if 'db' not in g:
         g.db = sqlite3.connect(
             current_app.config['DATABASE'],
@@ -47,5 +49,7 @@ sqlite3.register_converter(
 )
 
 def init_app(app):
+    # tells flask to call that function when cleaning up after returning response
     app.teardown_appcontext(close_db)
+    # add a new command that can be called with the flask command
     app.cli.add_command(init_db_command)
