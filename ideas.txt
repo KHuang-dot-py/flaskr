@@ -3,3 +3,7 @@ Extending Flaskr:
 Implement Facebook or Google Authentication
 
 Sticky-notes, local network access. Private posts
+
+Add a "forgot password" option
+Add a "profile picture" option
+Add like/dislike mechanics

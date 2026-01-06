@@ -54,11 +54,11 @@ def get_post(id, check_author = True):
     :param id: post id
     :param check_author: optionally check if viewer is author
     '''
-    db = get_db
+    db = get_db()
     post = db.execute(
         'SELECT p.id, title, body, created, author_id, username'
-        'FROM post p join user ON p.author_id = user.id'
-        'WHERE p.id = ?',
+        ' FROM post p join user ON p.author_id = user.id'
+        ' WHERE p.id = ?',
         (id,) # single-element tuple
     ).fetchone()
 
