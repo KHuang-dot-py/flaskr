@@ -13,6 +13,7 @@
       <header>
         <div>
           <h1>{{ post['title'] }}</h1>
+          <!-- add a image here, formatted to be a certain size -->
           <div class="about">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
         </div>
         {% if g.user['id'] == post['author_id'] %}

@@ -4,6 +4,31 @@ Implement Facebook or Google Authentication
 
 Sticky-notes, local network access. Private posts
 
+ANALYTICS:
+- Automate script to pull top 100 twitter text posts and usernames into database to begin analysis
+- OR run them through an ai wrapper that "theme-ifies" the messages
+- Run basic usage analytics/telemetry
+- Implement logging for updates ****
+    - Add an events table:
+        * Post Creation
+        * Post Deletion
+        * Post Update 
+
+
+
+FEATURES
+
+Hash passwords
+- Add hashing when storing to db
+- Add hash check when verifying password
+
 Add a "forgot password" option
+
 Add a "profile picture" option
+- steps:
+    Add BLOB avatar column to sql schema
+    
+
+
 Add like/dislike mechanics
+
