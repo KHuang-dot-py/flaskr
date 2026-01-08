@@ -21,4 +21,4 @@ def profile(user):
         ' ORDER BY created DESC',
         (user,)
     ).fetchall()
-    return render_template('blog/feed/index.html', posts = posts)
+    return render_template('blog/feed/prof.html', posts = posts)

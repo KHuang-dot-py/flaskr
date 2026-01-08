@@ -8,6 +8,7 @@ ANALYTICS:
 - Automate script to pull top 100 twitter text posts and usernames into database to begin analysis
 - OR run them through an ai wrapper that "theme-ifies" the messages
 - Run basic usage analytics/telemetry
+
 - Implement logging for updates ****
     - Add an events table:
         * Post Creation
@@ -27,7 +28,11 @@ Add a "forgot password" option
 Add a "profile picture" option
 - steps:
     Add BLOB avatar column to sql schema
-    
+    Update index
+
+Add a "profile" view: DONE
+- steps:
+    link to profile view, clickable author name for each post or clickable header
 
 
 Add like/dislike mechanics
