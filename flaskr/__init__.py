@@ -41,5 +41,9 @@ def create_app(test_config = None):
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', endpoint='index') #endpoint name "index" maps to '/' url so that url_for("index/blog.index") both work
     
+    # importing and registering our profile blueprint
+    from . import prof
+    app.register_blueprint(prof.bp)
+
     return app
 
