@@ -34,9 +34,7 @@ def init_db():
         # executing our sql schema to create the tables
         db.executescript(f.read().decode('utf8'))
 
-
 @click.command('init-db')
-
 def init_db_command():
     """Clear the existing data and create new tables."""
     init_db()
