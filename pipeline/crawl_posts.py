@@ -1,12 +1,33 @@
-import praw
+import requests
 
-reddit = praw.Reddit(
-    client_id="my client id",
-    client_secret="my client secret",
-    user_agent="my user agent",
+subreddit = "TwoSentenceHorror"
+
+headers = {
+    "User-Agent": "simple-script:reddit-reader:v1.0 (by u/Hackhowl)"
+}
+
+resp = requests.get(
+    f"https://www.reddit.com/r/{subreddit}/top.json",
+    headers=headers,
+    timeout=10
 )
+data = resp.json()
 
-print(reddit.read_only)
+posts = []
 
-for submission in reddit.subreddit("test").hot(limit=10):
-    print(submission.title)
+
+for p in data["data"]["children"]:
+    posts.append(
+            {
+        "title": p["data"]["title"],
+        "score": p["data"]["score"],
+        "author": p["data"]["author"],
+        "permalink": "https://reddit.com" + p["data"]["permalink"],
+        "subreddit": p["data"]["subreddit"]
+    }
+    )
+
+for post in posts:
+    for key, value in post.items():
+        print(key, value, sep = ": ")
+        print("")
