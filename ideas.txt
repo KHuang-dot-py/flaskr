@@ -4,7 +4,7 @@ Implement Facebook or Google Authentication
 
 Sticky-notes, local network access. Private posts
 
-ANALYTICS:
+## ANALYTICS:
 - Automate script to pull top 100 twitter text posts and usernames into database to begin analysis
 - OR run them through an ai wrapper that "theme-ifies" the messages
 - Run basic usage analytics/telemetry
@@ -33,9 +33,10 @@ Add a "profile picture" option
 Add a "profile" view: DONE
 - steps:
     link to profile view, clickable author name for each post and clickable header - DONE
-    
+
 - Known issues:
     direct url access to non-valid users is possible
+
 
 
 
