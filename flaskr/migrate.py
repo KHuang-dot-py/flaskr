@@ -29,6 +29,7 @@ def run_migrations():
             with open(os.path.join(MIGRATIONS_DIR, fname)) as f:
                 db.executescript(f.read())
             set_version(db, version)
+        print(f"version {version} applied")
             # applied.append(version)
     db.commit()
     # print("Migrations completed:", applied)
