@@ -10,10 +10,22 @@ Sticky-notes, local network access. Private posts
 - Run basic usage analytics/telemetry
 
 - Implement logging for updates ****
-    - Add an events table:
-        * Post Creation
-        * Post Deletion
-        * Post Update 
+    TODO:
+    - create migrate.py script - WIP
+        - add config file for flaskr.sqlite location
+        - update db.py to use my migration script
+    - create 002_add_audit.sql to create tables for my action logging
+        - Audit tables for:
+            * Post creation
+            * Post Deletion
+            * Post update
+            * User registration
+            * User login 
+            * User logout
+            * User deletion (FUTURE, ONCE ACC DELETION IMPLEMENTED)
+            * Like (FUTURE, ONCE LIKE IMPLEMENTED)
+            * Comment (FUTURE, ONCE COMMENT IMPLEMENTED)
+
 
 
 
