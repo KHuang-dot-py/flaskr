@@ -8,6 +8,7 @@ def create_app(test_config = None):
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+        RUN_MIGRATIONS=True,
     )
 
     if test_config is None:
@@ -22,6 +23,16 @@ def create_app(test_config = None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
+    # apply schema updates conditionally, False if missing
+    if app.config.get("RUN_MIGRATIONS", False):
+        with app.app_context():
+            from flaskr.migrate import run_migrations
+            run_migrations()
+    
+    #register click command
+    from . import cli
+    app.cli.add_command(cli.migrate_command)
 
     # a simple page that says hello
     @app.route('/hello')
