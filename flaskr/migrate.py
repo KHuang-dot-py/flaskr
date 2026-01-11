@@ -15,7 +15,7 @@ def set_version(db, version):
 
 def run_migrations():
     db = get_db()
-    current_version = get_current_version()
+    current_version = get_current_version(db)
     # applied = [int]
     # get list of migration sql schema files
     migrations = sorted(
