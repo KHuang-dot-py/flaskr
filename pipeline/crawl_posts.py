@@ -6,6 +6,7 @@ headers = {
     "User-Agent": "simple-script:reddit-reader:v1.0 (by u/Hackhowl)"
 }
 
+# to refine this request for num of posts, or using before/after properties to scroll pages. Also identify a timeframe.
 resp = requests.get(
     f"https://www.reddit.com/r/{subreddit}/top.json",
     headers=headers,
@@ -15,7 +16,8 @@ data = resp.json()
 
 posts = []
 
-
+# make sure to include date/time of post, and post-id/author-id
+# might need to "register" these users
 for p in data["data"]["children"]:
     posts.append(
             {
